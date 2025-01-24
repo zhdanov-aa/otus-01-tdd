@@ -5,7 +5,7 @@
 
 using namespace testing;
 
-const epsilon = 0.0000001;
+const double epsilon = 0.0000001;
 
 TEST(QuadraticEquation, solve_no_roots)
 {
