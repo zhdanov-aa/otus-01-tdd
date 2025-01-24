@@ -5,6 +5,7 @@
 
 class QuadraticEquation
 {
+public:    
     static std::vector<double> solve(double a, double b, double c);
 }
 
