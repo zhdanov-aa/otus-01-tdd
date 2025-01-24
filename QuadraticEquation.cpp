@@ -4,12 +4,12 @@
 
 std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 {
+    const double epsilon = 0.0000001;
+
     if (abs(a) < epsilon)
     {
         throw std::invalid_argument("a == 0");
     }
-    
-    const double epsilon = 0.0000001;
     
     double d = b*b-4*a*c;
 
