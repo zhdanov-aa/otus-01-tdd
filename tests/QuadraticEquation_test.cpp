@@ -29,3 +29,10 @@ TEST(QuadraticEquation, solve_a_zero_exception)
 {
     EXPECT_ANY_THROW(QuadraticEquation::solve(0, 1, 1));
 }
+
+TEST(QuadraticEquation, solve_D_less_epsilon)
+{
+    auto result = QuadraticEquation::solve(1, 2, 0.99999999999);
+    ASSERT_EQ(result.size(), 1);
+    ASSERT_DOUBLE_EQ(result[0], -1);
+}
