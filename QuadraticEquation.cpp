@@ -9,17 +9,17 @@ std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 
     if(abs(d) < epsilon)
     {
-        vector<double> result { (-1 * b / 2 / a) };
+        std::vector<double> result { (-1 * b / 2 / a) };
         return result;
     }
     else if (d < 0)
     {
-        return vector<double>();
+        return std::vector<double>();
     }
     else
     {
         double sqrt_d = sqrt(d);
-        vector<double> result { ((-1 + sqrt_d) * b / 2 / a), ((-1 - sqrt_d) * b / 2 / a) };
+        std::vector<double> result { ((-1 + sqrt_d) * b / 2 / a), ((-1 - sqrt_d) * b / 2 / a) };
         return result;
     }
 }
