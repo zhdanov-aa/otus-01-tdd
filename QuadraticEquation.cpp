@@ -9,7 +9,8 @@ std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 
     if(abs(d) < epsilon)
     {
-        return std::vector<double>() { (-1 * b / 2 / a) };
+        return std::vector<double> result { (-1 * b / 2 / a) };
+        return result;
     }
     else if (d < 0)
     {
