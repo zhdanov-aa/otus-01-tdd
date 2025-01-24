@@ -19,7 +19,7 @@ std::vector<double> QuadraticEquation::solve(double a, double b, double c)
     else
     {
         double sqrt_d = sqrt(d);
-        std::vector<double> result { ((-1 + sqrt_d) * b / 2 / a), ((-1 - sqrt_d) * b / 2 / a) };
+        std::vector<double> result { ((-1 * b + sqrt_d) / 2 / a), ((-1 * b - sqrt_d) / 2 / a) };
         return result;
     }
 }
