@@ -5,12 +5,14 @@
 
 using namespace testing;
 
-TEST(QuadraticEquation, solve_no_roots)
+// пункт #3 задания
+TEST(QuadraticEquation, CheckNoRoots)
 {
     ASSERT_TRUE(QuadraticEquation::solve(1, 0, 1).empty());
 }
 
-TEST(QuadraticEquation, solve_two_roots)
+// пункт #5 задания
+TEST(QuadraticEquation, CheckTwoRoots)
 {
     auto result = QuadraticEquation::solve(1, 0, -1);
     ASSERT_EQ(result.size(), 2);
@@ -18,26 +20,30 @@ TEST(QuadraticEquation, solve_two_roots)
     ASSERT_DOUBLE_EQ(result[1], -1);
 }
 
-TEST(QuadraticEquation, solve_one_root)
+// пункт #7 задания
+TEST(QuadraticEquation, CheckOneRoot)
 {
     auto result = QuadraticEquation::solve(1, 2, 1);
     ASSERT_EQ(result.size(), 1);
     ASSERT_DOUBLE_EQ(result[0], -1);
 }
 
-TEST(QuadraticEquation, solve_a_zero_exception)
+// пункт #9 задания
+TEST(QuadraticEquation, CheckAZeroException)
 {
     EXPECT_ANY_THROW(QuadraticEquation::solve(0, 1, 1));
 }
 
-TEST(QuadraticEquation, solve_D_less_epsilon)
+// пункт #11 задания
+TEST(QuadraticEquation, CheckDLessEpsilon)
 {
     auto result = QuadraticEquation::solve(1, 2, 0.99999999999);
     ASSERT_EQ(result.size(), 1);
     ASSERT_DOUBLE_EQ(result[0], -1);
 }
 
-TEST(QuadraticEquation, solve_nan_inf_exception)
+// пункт #13 задания
+TEST(QuadraticEquation, CheckArgsNanInfException)
 {
     EXPECT_ANY_THROW(QuadraticEquation::solve(NAN, 3, 1));
     EXPECT_ANY_THROW(QuadraticEquation::solve(INFINITY, 3, 1));
